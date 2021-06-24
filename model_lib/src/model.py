@@ -11,6 +11,7 @@ from torchvision import models, transforms
 
 from skimage.segmentation import mark_boundaries
 from lime import lime_image
+from PIL import Image
 
 # define data directories
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -175,7 +176,7 @@ class GRPCBasicImageClassification:
 
         # resize and center crop input TODO: edit this
         data = cv2.cvtColor(data, cv2.COLOR_BGR2RGB)
-        data = cv2.resize(data, (224, 224))
+        data = cv2.resize(data, (224, 224)).reshape((1,224,224,3))
         
         return data, orig_shape
    
@@ -361,10 +362,9 @@ class GRPCBasicImageClassification:
                 explanation_results = []
                 for img, shape in zip(imgs, shapes):
                     rle_mask = self.get_explainability(img, self.batch_predict, shape)
-                    explanation_result = {"dimensions": {"height":shape[0], "width":shape[1]}, "maskRLE":[rle_mask]}
-                    explanation_results.append(explanation_result)
+                    explanation_results.append({"dimensions": {"height":shape[0], "width":shape[1]}, "maskRLE":[rle_mask]})
                 explanation_results_iterator = iter(explanation_results)
-
+        
         # compile inference predictions, explanations, and drift output into a single output
         outputs = []    
         drift_result = None
@@ -379,4 +379,7 @@ class GRPCBasicImageClassification:
                     explanation_result = None
                 output_item = get_success_json_structure(inference_result, explanation_result, drift_result)
                 outputs.append(output_item)
+        
         return outputs
+
+    
