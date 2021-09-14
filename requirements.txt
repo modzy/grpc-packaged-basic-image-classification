@@ -218,7 +218,7 @@ opencv-python==4.5.2.54; python_version >= "3.6" \
     --hash=sha256:8cf81f53ac5ad900ca443a8252c4e0bc1256f1c2cb2d8459df2ba1ac014dfa36 \
     --hash=sha256:a8020cc6145c6934192189058743a55189750df6dff894396edb8b35a380cc48 \
     --hash=sha256:0a3aef70b7c53bbd22ade86a4318b8a2ad98d3c3ed3d0c315f18bf1a2d868709
-pillow==8.2.0; python_version >= "3.7" \
+pillow>=8.3.2; python_version >= "3.7" \
     --hash=sha256:dc38f57d8f20f06dd7c3161c59ca2c86893632623f33a42d592f097b00f720a9 \
     --hash=sha256:a013cbe25d20c2e0c4e85a9daf438f85121a4d0344ddc76e33fd7e3965d9af4b \
     --hash=sha256:8bb1e155a74e1bfbacd84555ea62fa21c58e0b4e7e6b20e4447b8d07990ac78b \
