@@ -172,7 +172,7 @@ matplotlib==3.4.2; python_version >= "3.7" \
 networkx==2.5.1; python_version >= "3.7" \
     --hash=sha256:0635858ed7e989f4c574c2328380b452df892ae85084144c73d8cd819f0c4e06 \
     --hash=sha256:109cd585cac41297f71103c3c42ac6ef7379f29788eb54cb751be5a663bb235a
-numpy==1.20.3; python_version >= "3.7" \
+numpy>=1.21; python_version >= "3.7" \
     --hash=sha256:70eb5808127284c4e5c9e836208e09d685a7978b6a216db85960b1a112eeace8 \
     --hash=sha256:6ca2b85a5997dabc38301a22ee43c82adcb53ff660b89ee88dded6b33687e1d8 \
     --hash=sha256:c5bf0e132acf7557fc9bb8ded8b53bbbbea8892f3c9a1738205878ca9434206a \
